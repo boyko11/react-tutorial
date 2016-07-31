@@ -2,11 +2,10 @@
 
 var CommentBox = React.createClass({
 
-  getInitialState: function() {
-    return {data: []};
-  },
+  loadCommentsFromServer: function() {
 
-  componentDidMount: function() {
+  	console.log('loadCommentsFromServer');
+    
     $.ajax({
       url: this.props.url,
       dataType: 'json',
@@ -19,8 +18,27 @@ var CommentBox = React.createClass({
       }.bind(this)
     });
   },
+  getInitialState: function() {
+
+  	console.log('getInitialState');
+
+    return {data: [    {
+        "id": 123456789,
+        "author": "Boyko Da Donkey",
+        "text": "Donkeys before, Donkeys Now, Donkeys FOREVER!"
+    }]};
+  },
+  componentDidMount: function() {
+
+  	console.log('componentDidMount');
+
+    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
+  },
 
   render: function() {
+
+	console.log('render');
+
     return (
       <div className="commentBox">
         <h1>Comments</h1>
@@ -44,8 +62,6 @@ var CommentList = React.createClass({
 		);
 	  });
 
-	  console.dir('commentNodes: ' + commentNodes);
-
     return (
       <div className="commentList">
       	{commentNodes}
@@ -55,11 +71,40 @@ var CommentList = React.createClass({
 });
 
 var CommentForm = React.createClass({
+
+  getInitialState: function() {
+    return {author: '', text: ''};
+  },
+  handleAuthorChange: function(e) {
+    this.setState({author: e.target.value});
+  },
+  handleTextChange: function(e) {
+    this.setState({text: e.target.value});
+  },
   render: function() {
     return (
-      <div className="commentForm">
-        Hello, world! I am a CommentForm.
-      </div>
+
+      <form className="commentForm">
+        <input
+          type="text"
+          placeholder="Your name"
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        />
+        <input
+          type="text"
+          placeholder="Your duplicate name"
+          value={this.state.author}
+          onChange={this.handleAuthorChange}
+        />
+        <input
+          type="text"
+          placeholder="Say something..."
+          value={this.state.text}
+          onChange={this.handleTextChange}
+        />
+        <input type="submit" value="Post" />
+      </form>
     );
   }
 });
@@ -84,6 +129,6 @@ var Comment = React.createClass({
 });
 
 ReactDOM.render(
-  <CommentBox url="/api/comments" />,
+  <CommentBox url="/api/comments" pollInterval={10000}/>,
   document.getElementById('content')
 );

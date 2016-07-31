@@ -8,5 +8,15 @@
         "id": 1420070400000,
         "author": "Paul O’Shannessy",
         "text": "React is *great*!"
-    }
+    },
+    {
+        "id": 123456789,
+        "author": "Donkey Donskies",
+        "text": "Da DOnkeys are COMING!!!"
+    },
+    {
+        "id": 987654321,
+        "author": "Super Goat",
+        "text": "Goats WIll eventually rul the world!"
+    }    
 ]
