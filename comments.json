@@ -1,22 +1,52 @@
 [
     {
+        "text": "Hey there!",
         "id": 1388534400000,
-        "author": "Pete Hunt",
-        "text": "Hey there!"
+        "author": "Pete Hunt"
     },
     {
+        "text": "React is *great*!",
         "id": 1420070400000,
-        "author": "Paul O’Shannessy",
-        "text": "React is *great*!"
+        "author": "Paul O\u2019Shannessy"
     },
     {
+        "text": "Da DOnkeys are COMING!!!",
         "id": 123456789,
-        "author": "Donkey Donskies",
-        "text": "Da DOnkeys are COMING!!!"
+        "author": "Donkey Donskies"
     },
     {
+        "text": "Goats WIll eventually rul the world!",
         "id": 987654321,
-        "author": "Super Goat",
-        "text": "Goats WIll eventually rul the world!"
-    }    
+        "author": "Super Goat"
+    },
+    {
+        "text": "Howdy Donkeyzzz!",
+        "id": 1469997849060,
+        "author": "Donkey"
+    },
+    {
+        "text": "Initial State",
+        "id": 1469998322884,
+        "author": "Initial Author"
+    },
+    {
+        "text": "Initial State",
+        "id": 1469998368676,
+        "author": "Initial Author"
+    },
+    {
+        "text": "Heeeey",
+        "id": 1469998410555,
+        "author": "Howdy"
+    },
+    {
+        "text": "Heeeeeeello",
+        "id": 1469998434570,
+        "author": "Hello"
+    },
+    {
+        "text": "DDDD",
+        "id": 1469998623631,
+        "author": "sadsad"
+    }
 ]
